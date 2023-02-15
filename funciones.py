@@ -32,3 +32,33 @@ def obten_mano(baraja:list) -> list:
         mano.append(carta)
         
     return mano
+
+def contar_puntos(jugador:list) -> int:
+        diccionario = {}    
+
+        for carta in jugador:
+            if carta[0] in diccionario:
+                diccionario[carta[0]] += 1
+            else:
+                diccionario[carta[0]] = 1
+    
+        puntos = 0
+
+        for k,v in diccionario.items():
+            if v == 2:
+                if k in ['J','Q','K']:
+                    puntos += 11
+                if k == 'A':
+                    puntos += 12
+                else:
+                    puntos += int(k)
+
+            if v == 3:
+                if k in ['J','Q','K']:
+                    puntos += 110
+                if k == 'A':
+                    puntos += 120
+                else:
+                    puntos += (int(k)*10)
+
+        return puntos
