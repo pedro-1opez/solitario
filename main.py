@@ -26,5 +26,9 @@ def main():
         else:
             print("Empate")
 
+    #Asignamos los jokers
+    conteo = funciones.crea_conteo(cpu)                        
+    funciones.asigna_joker(conteo)
+
 if __name__ == "__main__":
     main()    
