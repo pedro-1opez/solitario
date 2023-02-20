@@ -76,3 +76,39 @@ def crea_conteo(mano: list) -> dict:
             d[carta[0]] = 1
             
     return d
+
+def asigna_joker(dconteo: dict):
+        
+    dvalores = {'2': 2,
+                '3': 3,
+                '4': 4,
+                '5': 5,
+                '6': 6,
+                '7': 7,
+                '8': 8,
+                '9': 9,
+                '10': 10,
+                'J': 11,
+                'G': 12,
+                'K': 13,
+                'A': 14,
+                '?': 0}
+
+
+    if '?' in dconteo:
+        conteo_max = max(dconteo)
+
+        if conteo_max == 1:
+
+            llave = ""
+            maximo = 0            
+
+            for k,v in dconteo.items():
+                valor = dvalores[k]
+                if valor > maximo:
+                    maximo = valor
+                    llave = llave
+
+            # Agregar carta mayor
+            dconteo[llave] += 1
+            del(dconteo['?'])
