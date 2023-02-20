@@ -48,9 +48,9 @@ def contar_puntos(jugador:list) -> int:
             if v == 2:
                 if k in ['J','Q','K']:
                     puntos += 11
-                if k == 'A':
+                elif k == 'A':
                     puntos += 12
-                else:
+                elif k.isdigit():
                     puntos += int(k)
 
             if v == 3:

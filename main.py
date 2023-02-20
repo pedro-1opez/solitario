@@ -7,11 +7,11 @@ def main():
 
     #Genera la mano del jugador
     jugador = funciones.obten_mano(mazo)
-    jugador = sorted(jugador)
+    jugador = sorted(jugador, key=lambda carta: carta[0])
 
     #Genera la mano del CPU
     cpu = funciones.obten_mano(mazo)
-    cpu = sorted(cpu)        
+    cpu = sorted(cpu, key=lambda carta: carta[0])  
 
     #Contamos los puntos
     j = funciones.contar_puntos(jugador)
