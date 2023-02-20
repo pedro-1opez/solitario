@@ -62,3 +62,17 @@ def contar_puntos(jugador:list) -> int:
                     puntos += (int(k)*10)
 
         return puntos
+
+def crea_conteo(mano: list) -> dict:
+    
+    d = {'A':2,
+         '3':2,
+         '?':1}
+
+    for carta in mano:
+        if carta[0] in d:
+            d[carta[0]] += 1
+        else:
+            d[carta[0]] = 1
+            
+    return d
